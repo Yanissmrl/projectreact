@@ -5,16 +5,17 @@ import { ApiContext } from "../apiContext";
 
 const Home = () => {
     const api = useContext(ApiContext);
-    const [photo, setPhoto] = useState([])
-    api.getPhoto().then((data) => {setPhoto(data.photos)})
+    const [player, setPlayer] = useState([])
+    api.getPlayer().then((data) => {setPlayer(data.players)})
     return (
         <div>
-            {photo.map((photo) => (
-                <div key={photo.id}>
-                    <p>{photo.id}</p>
+            {player.map((player) => (
+                <div key={player.tag}>
+                    <p>{player.tag}</p>
                 </div>
             ))}
         </div>
+        
     );
 }
 
